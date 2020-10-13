@@ -1,0 +1,5 @@
+Code,Meaning
+0,not suppressed - 5 or more
+1,"suppressed - more than 0, less than 5"
+2,not suppressed - 0 cases
+3,not reported
