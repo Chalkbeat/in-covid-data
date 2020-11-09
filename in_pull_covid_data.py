@@ -61,9 +61,9 @@ moving_average_cases_staff = pd.DataFrame(json["daily_school_cases"]["moving_ave
 moving_average_cases_student = pd.DataFrame(json["daily_school_cases"]["moving_average_cases_student"])
 moving_average_cases_teacher = pd.DataFrame(json["daily_school_cases"]["moving_average_cases_teacher"])
 
-df3 = pd.concat([date, school_id, student_new_cases, staff_existing_cases, staff_new_cases, student_existing_cases, student_new_cases, teacher_existing_cases,
+df3 = pd.concat([date, school_id, staff_existing_cases, staff_new_cases, student_existing_cases, student_new_cases, teacher_existing_cases,
                  teacher_new_cases, moving_average_cases_staff, moving_average_cases_student, moving_average_cases_teacher], axis=1)
-df3.columns = ["date", "school_id", "student_new_cases", "staff_existing_cases", "staff_new_cases", "student_existing_cases", "student_new_cases", "teacher_existing_cases",
+df3.columns = ["date", "school_id", "staff_existing_cases", "staff_new_cases", "student_existing_cases", "student_new_cases", "teacher_existing_cases",
                "teacher_new_cases", "moving_average_cases_staff", "moving_average_cases_student", "moving_average_cases_teacher"]
 
 df3.to_csv("daily_school_cases.csv", index=False)
