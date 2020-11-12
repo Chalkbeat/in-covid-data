@@ -1,5 +1,6 @@
 import requests
 import pandas as pd
+from datetime import date
 
 url = "https://www.coronavirus.in.gov/map/covid-19-indiana-school-report.json"
 
@@ -47,6 +48,16 @@ df2_statewide = df2.iloc[0:1,:]
 df2_statewide.head()
 
 df2_statewide.to_csv("statewide_data.csv", index=False)
+
+# Save weekly statewide version
+today = date.today()
+date = today.strftime("%d/%m/%Y")
+statewide_weekly = pd.read_csv("statewide_data_weekly.csv")
+sw_row = pd.DataFrame([date, student_total_cases, teacher_new_cases, staff_total_cases])
+sw.columns = ["date","students","teachers","staff"]
+statewide_weekly = statewide_weekly.append(sw_row)
+statewide_weekly.to_csv("statewide_data_weekly.csv", index=False)
+
 
 # Collect and format daily school data
 date = pd.DataFrame(json["daily_school_cases"]["date"])
