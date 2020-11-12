@@ -54,7 +54,7 @@ statewide_weekly = pd.read_csv("statewide_data_weekly.csv")
 latest = statewide_weekly.iloc[len(statewide_weekly),1]
 if latest != student_total_cases.iloc[0,0]:
     today = date.today()
-    date_formatted = today.strftime("%d/%m/%Y")
+    date_formatted = today.strftime("%m/%d/%Y")
     sw_row = pd.DataFrame({"date":date_formatted, "students":student_total_cases.iloc[0,0], "teachers":teacher_new_cases.iloc[0,0], "staff":staff_total_cases.iloc[0,0]}, index=[0])
     statewide_weekly = statewide_weekly.append(sw_row)
     statewide_weekly.to_csv("statewide_data_weekly.csv", index=False)
