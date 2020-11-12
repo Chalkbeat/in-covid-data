@@ -2,7 +2,7 @@ name: pull Indiana schools data
 
 on:
   schedule:
-    - cron: "53 * * * *" #runs at 5:00 UTC / 1:00 EDT everyday
+    - cron: "6 * * * *" #runs at 5:00 UTC / 1:00 EDT everyday
 
 jobs:
   build:

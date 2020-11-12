@@ -51,7 +51,7 @@ df2_statewide.to_csv("statewide_data.csv", index=False)
 
 # Save weekly statewide version
 statewide_weekly = pd.read_csv("statewide_data_weekly.csv")
-latest = statewide_weekly.iloc[len(statewide_weekly),1]
+latest = statewide_weekly.iloc[len(statewide_weekly)-1,1]
 if latest != student_total_cases.iloc[0,0]:
     today = date.today()
     date_formatted = today.strftime("%m/%d/%Y")
