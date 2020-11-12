@@ -53,8 +53,7 @@ df2_statewide.to_csv("statewide_data.csv", index=False)
 today = date.today()
 date = today.strftime("%d/%m/%Y")
 statewide_weekly = pd.read_csv("statewide_data_weekly.csv")
-sw_row = pd.DataFrame([date, student_total_cases, teacher_new_cases, staff_total_cases])
-sw_row.columns = ["date","students","teachers","staff"]
+sw_row = pd.DataFrame({"date":date_formatted, "students":student_total_cases.iloc[0,0], "teachers":teacher_new_cases.iloc[0,0], "staff":staff_total_cases.iloc[0,0]}, index=[0])
 statewide_weekly = statewide_weekly.append(sw_row)
 statewide_weekly.to_csv("statewide_data_weekly.csv", index=False)
 
