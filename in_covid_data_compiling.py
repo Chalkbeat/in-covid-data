@@ -1,4 +1,5 @@
 import requests
+import pandas as pd
 import numpy as np
 
 df = pd.read_csv("school_data.csv")
